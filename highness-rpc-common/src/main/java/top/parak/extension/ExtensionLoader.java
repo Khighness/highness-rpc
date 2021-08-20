@@ -14,7 +14,8 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * @author KHighness
  * @since 2021-08-20
- * @apiNote 一个SPI接口对应一个ExtensionLoader
+ * @param <T> 泛型
+ * @apiNote SPI Extension Loader
  */
 @Slf4j
 public class ExtensionLoader<T> {
@@ -23,24 +24,24 @@ public class ExtensionLoader<T> {
      */
     private static final String SERVICE_DIRECTORY = "META-INF/extensions/";
     /**
-     * 类加载器缓存，KEY: SPI接口Class，VALUE：该接口的ExtensionClassLoader
+     * 类加载器缓存，KEY: SPI接口实现类，VALUE: 该接口的ExtensionClassLoader
      */
     private static final Map<Class<?>, ExtensionLoader<?>> EXTENSION_LOADERS = new ConcurrentHashMap<>();
     /**
-     * 目标类实例缓存，KEY：SPI接口Class，VALUE：SPI接口实现类的对象实例
+     * 目标类实例缓存，KEY: SPI接口实现类，VALUE: SPI接口实现类的对象实例
      */
     private static final Map<Class<?>, Object> EXTENSION_INSTANCES = new ConcurrentHashMap<>();
 
     /**
-     * SPI接口Class
+     * SPI接口类
      */
     private final Class<?> type;
     /**
-     * 缓存创建好的extensionClass实例
+     * SPI接口实现类的对象实例缓存，KEY: SPI文件key，VALUE: SPI接口实现类的对象实例
      */
     private final Map<String, Holder<Object>> cachedInstances = new ConcurrentHashMap<>();
     /**
-     * 存放文件的SPI key-value pair
+     * SPI接口实现类的对象缓存，Holder保证线程安全，KEY: SPI文件key，VALUE: SPI接口实现类
      */
     private final Holder<Map<String, Class<?>>> cachedClasses = new Holder<>();
 
