@@ -12,6 +12,6 @@ import java.lang.annotation.*;
 @Target({ElementType.TYPE, ElementType.METHOD})
 public @interface RpcScan {
 
-    String[] basePackages();
+    String[] basePackage();
 
 }

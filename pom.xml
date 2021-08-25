@@ -40,6 +40,7 @@
     <modules>
         <module>highness-rpc-common</module>
         <module>highness-rpc-core</module>
+        <module>highness-rpc-example</module>
     </modules>
 
     <dependencies>

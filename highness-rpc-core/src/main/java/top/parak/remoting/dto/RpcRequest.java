@@ -40,7 +40,7 @@ public class RpcRequest implements Serializable {
     /**
      * The parameter type of the calling method
      */
-    private Class<?> paramTypes;
+    private Class<?>[] paramTypes;
 
     /**
      * The version of the calling method
