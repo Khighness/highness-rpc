@@ -50,6 +50,6 @@ public class CustomScannerRegister implements ImportBeanDefinitionRegistrar, Res
         int springBeanAmount = springBeanScanner.scan(SPRING_BEAN_BASE_PACKAGE);
         log.info("springBeanScanner扫描的数量 [{}]", springBeanAmount);
         int rpcServiceAmount = rpcServiceScanner.scan(rpcScanBasePackages);
-        log.info("rpcServiceScanner扫描的数量 [{}]", rpcScanBasePackages);
+        log.info("rpcServiceScanner扫描的数量 [{}]", rpcServiceAmount);
     }
 }

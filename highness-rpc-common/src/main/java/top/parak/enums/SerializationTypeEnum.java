@@ -12,8 +12,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum SerializationTypeEnum {
 
-    KYRO((byte) 0X0, "kyro"),
-    PROTOSTUFF((byte) 0X0, "PROTOSTUFF");
+    KRYO((byte) 0X0, "kryo"),
+    PROTOSTUFF((byte) 0X0, "protostuff");
 
     private final byte code;
     private final String name;

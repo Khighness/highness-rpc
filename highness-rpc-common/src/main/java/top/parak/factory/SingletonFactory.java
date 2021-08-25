@@ -15,7 +15,7 @@ public class SingletonFactory {
     private SingletonFactory() {
     }
 
-    private static <T> T getInstance(Class<T> c) {
+    public static <T> T getInstance(Class<T> c) {
         if (c == null) {
             throw new IllegalArgumentException();
         }

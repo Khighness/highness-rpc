@@ -1,8 +1,7 @@
 package top.parak.config;
 
 import lombok.extern.slf4j.Slf4j;
-import org.checkerframework.checker.units.qual.C;
-import top.parak.remoting.transport.nety.NettyRpcServer;
+import top.parak.remoting.transport.netty.server.NettyRpcServer;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
