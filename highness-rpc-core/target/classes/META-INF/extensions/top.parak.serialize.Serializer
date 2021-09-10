@@ -1,2 +1,0 @@
-kyro=top.parak.serialize.kyro.KryoSerializer
-protostuff=top.parak.serialize.protostuff.ProtostuffSerializer
