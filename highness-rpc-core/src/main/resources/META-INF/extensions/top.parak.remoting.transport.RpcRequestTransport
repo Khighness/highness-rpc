@@ -1,2 +1,0 @@
-netty=top.parak.remoting.transport.netty.client.NettyRpcClient
-socket=top.parak.remoting.transport.socket.SocketRpcClient
