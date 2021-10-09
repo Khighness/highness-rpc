@@ -8,9 +8,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * @author shuang.kou
- * @createTime 2020年07月21日 20:23:00
- **/
+ * @author KHighness
+ * @since 2021-09-11
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -26,7 +26,6 @@ public class RpcServiceConfig {
      * when the interface has multiple implementation classes, distinguish by group
      */
     private String group = "";
-
     /**
      * target service
      */
