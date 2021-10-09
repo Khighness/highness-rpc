@@ -31,7 +31,7 @@ public class CustomScannerRegistrar implements ImportBeanDefinitionRegistrar, Re
 
     @Override
     public void registerBeanDefinitions(AnnotationMetadata annotationMetadata, BeanDefinitionRegistry beanDefinitionRegistry) {
-        //get the attributes and values ​​of RpcScan annotation
+        // get the attributes and values ​​of RpcScan annotation
         AnnotationAttributes rpcScanAnnotationAttributes = AnnotationAttributes.fromMap(annotationMetadata.getAnnotationAttributes(RpcScan.class.getName()));
         String[] rpcScanBasePackages = new String[0];
         if (rpcScanAnnotationAttributes != null) {
@@ -50,9 +50,9 @@ public class CustomScannerRegistrar implements ImportBeanDefinitionRegistrar, Re
             springBeanScanner.setResourceLoader(resourceLoader);
         }
         int springBeanAmount = springBeanScanner.scan(SPRING_BEAN_BASE_PACKAGE);
-        log.info("springBeanScanner扫描的数量 [{}]", springBeanAmount);
+        log.info("SpringBeanScanner扫描的组件数量：[{}]", springBeanAmount);
         int rpcServiceCount = rpcServiceScanner.scan(rpcScanBasePackages);
-        log.info("rpcServiceScanner扫描的数量 [{}]", rpcServiceCount);
+        log.info("RpcServiceScanner扫描的服务数量：[{}]", rpcServiceCount);
 
     }
 

@@ -10,8 +10,8 @@ import lombok.ToString;
 import java.io.Serializable;
 
 /**
- * @author shuang.kou
- * @createTime 2020年05月10日 07:04:00
+ * @author KHighness
+ * @since 2021-09-11
  */
 @AllArgsConstructor
 @NoArgsConstructor

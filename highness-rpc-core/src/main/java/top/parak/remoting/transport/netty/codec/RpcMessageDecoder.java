@@ -31,9 +31,9 @@ import java.util.Arrays;
  *     <li>V (version, 版本): 1Byte</li>
  *     <li>LEN (content length, 消息长度): 4Byte</li>
  *     <li>T (message type, 消息类型): 1Byte</li>
- *     <li>Z (Compress, 压缩类型): 1Byte</li>
- *     <li>C (codec, 序列化类型): 1Byte</li>
- *     <li>ID (sequenceId, 请求ID): 4Byte</li>
+ *     <li>Z (compress type, 压缩类型): 1Byte</li>
+ *     <li>C (codec type, 序列化类型): 1Byte</li>
+ *     <li>ID (sequence id, 请求ID): 4Byte</li>
  * </ul>
  * <p>
  * {@link LengthFieldBasedFrameDecoder} is a length-based decoder , used to solve TCP unpacking and sticking problems.
@@ -88,7 +88,6 @@ public class RpcMessageDecoder extends LengthFieldBasedFrameDecoder {
         return decoded;
     }
 
-
     private Object decodeFrame(ByteBuf in) {
         // note: must read ByteBuf in order
         checkMagicNumber(in);
@@ -136,7 +135,6 @@ public class RpcMessageDecoder extends LengthFieldBasedFrameDecoder {
         return rpcMessage;
 
     }
-
 
     private void checkVersion(ByteBuf in) {
         // read the version and compare

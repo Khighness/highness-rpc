@@ -2,8 +2,8 @@ package top.parak;
 
 
 /**
- * @author shuang.kou
- * @createTime 2020年05月10日 07:03:00
+ * @author KHighness
+ * @since 2021-09-11
  */
 public interface HelloService {
     String hello(Hello hello);

@@ -97,7 +97,7 @@ public final class NettyRpcClient implements RpcRequestTransport {
         CompletableFuture<RpcResponse<Object>> resultFuture = new CompletableFuture<>();
         // get server address
         InetSocketAddress inetSocketAddress = serviceDiscovery.lookupService(rpcRequest);
-        // get  server address related channel
+        // get server address related channel
         Channel channel = getChannel(inetSocketAddress);
         if (channel.isActive()) {
             // put unprocessed request

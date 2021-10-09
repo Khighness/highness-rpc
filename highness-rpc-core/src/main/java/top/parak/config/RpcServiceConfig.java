@@ -31,10 +31,17 @@ public class RpcServiceConfig {
      */
     private Object service;
 
+    /**
+     * interface name + group + version
+     * @return rpc service name
+     */
     public String getRpcServiceName() {
         return this.getServiceName() + this.getGroup() + this.getVersion();
     }
 
+    /**
+     * @return first interface name
+     */
     public String getServiceName() {
         return this.service.getClass().getInterfaces()[0].getCanonicalName();
     }

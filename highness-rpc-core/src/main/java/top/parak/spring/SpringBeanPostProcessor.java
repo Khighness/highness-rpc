@@ -71,7 +71,6 @@ public class SpringBeanPostProcessor implements BeanPostProcessor {
                     e.printStackTrace();
                 }
             }
-
         }
         return bean;
     }
