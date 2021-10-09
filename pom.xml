@@ -23,15 +23,19 @@
         <checkstyle-maven-plugin.version>3.1.1</checkstyle-maven-plugin.version>
         <!-- spring -->
         <spring.version>5.2.7.RELEASE</spring.version>
+        <!-- lombok -->
+        <lombok.version>1.18.8</lombok.version>
+        <!-- guava-->
+        <guava.version>30.1.1-jre</guava.version>
         <!-- zk -->
         <curator-version>4.2.0</curator-version>
         <!-- io -->
         <netty.version>4.1.42.Final</netty.version>
-        <!-- serailize-->
+        <!-- kryo-->
         <kryo.version>4.0.2</kryo.version>
-        <guava.version>30.1.1-jre</guava.version>
+        <!-- protostuff -->
         <protostuff.version>1.7.2</protostuff.version>
-        <!-- test -->
+        <!-- junit -->
         <junit.jupiter.version>5.5.2</junit.jupiter.version>
         <junit.platform.version>1.5.2</junit.platform.version>
         <!--logging-->
@@ -51,7 +55,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.8</version>
+            <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
         <!-- guava -->
@@ -71,7 +75,7 @@
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
-        <!-- test -->
+        <!-- junit -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>

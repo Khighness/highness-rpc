@@ -13,6 +13,7 @@ import java.net.InetSocketAddress;
  */
 @SPI
 public interface ServiceDiscovery {
+
     /**
      * lookup service by rpcServiceName
      *
@@ -20,4 +21,5 @@ public interface ServiceDiscovery {
      * @return service address
      */
     InetSocketAddress lookupService(RpcRequest rpcRequest);
+
 }

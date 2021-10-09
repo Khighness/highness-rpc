@@ -15,23 +15,24 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * <p>
  * custom protocol decoder
- * <p>
  * <pre>
- *   0     1     2     3     4        5     6     7     8         9          10      11     12  13  14   15 16
- *   +-----+-----+-----+-----+--------+----+----+----+------+-----------+-------+----- --+-----+-----+-------+
- *   |   magic   code        |version | full length         | messageType| codec|compress|    RequestId       |
- *   +-----------------------+--------+---------------------+-----------+-----------+-----------+------------+
- *   |                                                                                                       |
- *   |                                         body                                                          |
- *   |                                                                                                       |
- *   |                                        ... ...                                                        |
- *   +-------------------------------------------------------------------------------------------------------+
- * 4B  magic code（魔法数）   1B version（版本）   4B full length（消息长度）    1B messageType（消息类型）
- * 1B compress（压缩类型） 1B codec（序列化类型）    4B  requestId（请求的Id）
- * body（object类型数据）
+ *   0     4     5     9     10    11    12    16
+ *   +-----+-----+-----+-----+-----+-----+-----+
+ *   |  MC |  V  | LEN |  T  |  Z  |  C  | ID  |
+ *   +-----+-----+-----+-----+-----+-----+-----+
+ *   |                  BODY                   |
+ *   +-----+-----+-----+-----+-----+-----+-----+
  * </pre>
+ * <ul>
+ *     <li>MC (magic code, 魔法数): 4Byte</li>
+ *     <li>V (version, 版本): 1Byte</li>
+ *     <li>LEN (content length, 消息长度): 4Byte</li>
+ *     <li>T (message type, 消息类型): 1Byte</li>
+ *     <li>Z (Compress, 压缩类型): 1Byte</li>
+ *     <li>C (codec, 序列化类型): 1Byte</li>
+ *     <li>ID (sequenceId, 请求ID): 4Byte</li>
+ * </ul>
  *
  * @author KHighness
  * @since 2021-09-11
@@ -84,7 +85,6 @@ public class RpcMessageEncoder extends MessageToByteEncoder<RpcMessage> {
         } catch (Exception e) {
             log.error("Encode request error!", e);
         }
-
     }
 
 

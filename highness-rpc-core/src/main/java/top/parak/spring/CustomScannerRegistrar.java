@@ -27,7 +27,6 @@ public class CustomScannerRegistrar implements ImportBeanDefinitionRegistrar, Re
     @Override
     public void setResourceLoader(ResourceLoader resourceLoader) {
         this.resourceLoader = resourceLoader;
-
     }
 
     @Override

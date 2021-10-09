@@ -48,20 +48,18 @@ public final class NettyRpcClient implements RpcRequestTransport {
     private final EventLoopGroup eventLoopGroup;
 
     public NettyRpcClient() {
-        // initialize resources such as EventLoopGroup, Bootstrap
         eventLoopGroup = new NioEventLoopGroup();
         bootstrap = new Bootstrap();
         bootstrap.group(eventLoopGroup)
                 .channel(NioSocketChannel.class)
                 .handler(new LoggingHandler(LogLevel.INFO))
-                //  The timeout period of the connection.
-                //  If this time is exceeded or the connection cannot be established, the connection fails.
+                // 设置连接超时事件，5S
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 5000)
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     protected void initChannel(SocketChannel ch) {
                         ChannelPipeline p = ch.pipeline();
-                        // If no data is sent to the server within 15 seconds, a heartbeat request is sent
+                        // 5s 没有写数据，就发送心跳包
                         p.addLast(new IdleStateHandler(0, 5, 0, TimeUnit.SECONDS));
                         p.addLast(new RpcMessageEncoder());
                         p.addLast(new RpcMessageDecoder());
