@@ -30,7 +30,12 @@
 
 > 服务注册用于服务器
 
-`SpringBeanPostProcessor`实现Spring的`BeanPostProcessor`的实例化后和初始化后逻辑：
+`CustomScannerRegistrar`使用`CustomScanner`扫描`@RpcScan`指定路径下，包含`@Component`和`@RpcService`注解的bean。
+
+- `CustomScanner`实现了Spring的`ClassPathBeanDefinitionScanner`扫描器，用于扫描包含指定注解的bean。
+- `CustomScannerRegistrar`实现了Spring的`ImportBeanDefinitionRegistrar`接口，用于扫描向容器中批量注册带有bean。
+
+`SpringBeanPostProcessor`实现的Spring的`BeanPostProcessor`的实例化后和初始化后逻辑：
 
 - 实例化后逻辑：处理`@RpcService`注解，即服务的实现类，封装`RpcServiceConfig`对象，进行服务注册。
 - 初始化后逻辑：处理`@RpcReference`注解，即服务的调用类，实现客户端的动态代理。
