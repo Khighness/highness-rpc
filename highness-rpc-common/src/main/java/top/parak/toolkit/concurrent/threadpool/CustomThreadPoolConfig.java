@@ -1,4 +1,4 @@
-package top.parak.utils.concurrent.threadpool;
+package top.parak.toolkit.concurrent.threadpool;
 
 import lombok.Getter;
 import lombok.Setter;

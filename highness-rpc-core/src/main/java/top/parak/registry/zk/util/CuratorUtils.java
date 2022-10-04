@@ -1,7 +1,7 @@
 package top.parak.registry.zk.util;
 
 import top.parak.enums.RpcConfigEnum;
-import top.parak.utils.PropertiesFileUtil;
+import top.parak.toolkit.PropertiesFileUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;

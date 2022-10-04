@@ -1,4 +1,4 @@
-package top.parak.utils.concurrent.threadpool;
+package top.parak.toolkit.concurrent.threadpool;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import lombok.extern.slf4j.Slf4j;

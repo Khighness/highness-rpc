@@ -2,7 +2,7 @@ package top.parak.config;
 
 import top.parak.registry.zk.util.CuratorUtils;
 import top.parak.remoting.transport.netty.server.NettyRpcServer;
-import top.parak.utils.concurrent.threadpool.ThreadPoolFactoryUtils;
+import top.parak.toolkit.concurrent.threadpool.ThreadPoolFactoryUtils;
 import lombok.extern.slf4j.Slf4j;
 
 import java.net.InetAddress;
