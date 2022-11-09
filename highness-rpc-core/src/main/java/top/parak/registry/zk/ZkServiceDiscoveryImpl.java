@@ -37,7 +37,7 @@ public class ZkServiceDiscoveryImpl implements ServiceDiscovery {
         }
         // load balancing
         String targetServiceUrl = loadBalance.selectServiceAddress(serviceUrlList, rpcRequest);
-        log.info("Successfully found the service address:[{}]", targetServiceUrl);
+        log.info("Successfully found the service address: [{}]", targetServiceUrl);
         String[] socketAddressArray = targetServiceUrl.split(":");
         String host = socketAddressArray[0];
         int port = Integer.parseInt(socketAddressArray[1]);

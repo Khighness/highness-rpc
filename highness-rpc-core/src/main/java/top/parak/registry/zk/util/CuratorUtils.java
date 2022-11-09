@@ -48,11 +48,11 @@ public final class CuratorUtils {
     public static void createPersistentNode(CuratorFramework zkClient, String path) {
         try {
             if (REGISTERED_PATH_SET.contains(path) || zkClient.checkExists().forPath(path) != null) {
-                log.info("The node already exists. The node is:[{}]", path);
+                log.info("The node already exists. The node is: [{}]", path);
             } else {
                 // eg: /my-rpc/top.parak.HelloService/127.0.0.1:9999
                 zkClient.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT).forPath(path);
-                log.info("The node was created successfully. The node is:[{}]", path);
+                log.info("The node was created successfully. The node is: [{}]", path);
             }
             REGISTERED_PATH_SET.add(path);
         } catch (Exception e) {
@@ -95,7 +95,7 @@ public final class CuratorUtils {
                 log.error("clear registry for path [{}] fail", p);
             }
         });
-        log.info("All registered services on the server are cleared:[{}]", REGISTERED_PATH_SET.toString());
+        log.info("All registered services on the server are cleared: [{}]", REGISTERED_PATH_SET.toString());
     }
 
     public static CuratorFramework getZkClient() {
